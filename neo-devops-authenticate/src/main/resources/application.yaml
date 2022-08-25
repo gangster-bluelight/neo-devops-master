@@ -1,0 +1,29 @@
+server:
+  port: 8500
+
+spring:
+  application:
+    name: neo-devops-authenticate
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.145.150:8848
+  datasource:
+    url: jdbc:mysql://192.168.145.141:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: Tv75aYT8@
+    driver-class-name: com.mysql.jdbc.Driver
+  main:
+    allow-circular-references: true
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+#暴露监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
